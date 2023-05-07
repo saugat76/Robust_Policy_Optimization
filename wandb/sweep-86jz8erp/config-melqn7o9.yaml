@@ -1,0 +1,12 @@
+wandb_version: 1
+
+activation_funcs:
+  value: nn.Tanh()
+batch_size:
+  value: 64
+lr:
+  value: 0.08979791744638416
+num_nodes:
+  value: 128
+optimizer_choices:
+  value: RMSProp

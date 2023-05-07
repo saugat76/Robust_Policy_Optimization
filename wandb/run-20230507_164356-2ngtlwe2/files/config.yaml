@@ -1,0 +1,133 @@
+wandb_version: 1
+
+activation_funcs:
+  desc: null
+  value: ReLU()
+batch_size:
+  desc: null
+  value: 64
+lr:
+  desc: null
+  value: 0.017142916224497127
+num_nodes:
+  desc: null
+  value: 128
+optimizer_choices:
+  desc: null
+  value: AdamW
+exp_name:
+  desc: null
+  value: rpo_continuous_action
+seed:
+  desc: null
+  value: 1
+torch_deterministic:
+  desc: null
+  value: true
+cuda:
+  desc: null
+  value: true
+track:
+  desc: null
+  value: true
+wandb_project_name:
+  desc: null
+  value: cleanRL
+wandb_entity:
+  desc: null
+  value: null
+capture_video:
+  desc: null
+  value: false
+env_id:
+  desc: null
+  value: Pendulum-v1
+total_timesteps:
+  desc: null
+  value: 2000000
+learning_rate:
+  desc: null
+  value: 0.07607295600737803
+num_envs:
+  desc: null
+  value: 1
+num_steps:
+  desc: null
+  value: 2048
+anneal_lr:
+  desc: null
+  value: true
+gamma:
+  desc: null
+  value: 0.99
+gae_lambda:
+  desc: null
+  value: 0.95
+num_minibatches:
+  desc: null
+  value: 32
+update_epochs:
+  desc: null
+  value: 10
+norm_adv:
+  desc: null
+  value: true
+clip_coef:
+  desc: null
+  value: 0.2
+clip_vloss:
+  desc: null
+  value: true
+ent_coef:
+  desc: null
+  value: 0.0
+vf_coef:
+  desc: null
+  value: 0.5
+max_grad_norm:
+  desc: null
+  value: 0.5
+target_kl:
+  desc: null
+  value: null
+rpo_alpha:
+  desc: null
+  value: 0.5
+activation_func:
+  desc: null
+  value: ReLU()
+sweep_config:
+  desc: null
+  value: false
+minibatch_size:
+  desc: null
+  value: 64
+_wandb:
+  desc: null
+  value:
+    code_path: code/rpo_continuous_action.py
+    python_version: 3.11.3
+    cli_version: 0.15.2
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1683492236.138661
+    t:
+      1:
+      - 1
+      - 55
+      2:
+      - 1
+      - 55
+      3:
+      - 2
+      - 13
+      - 16
+      - 23
+      - 34
+      - 37
+      4: 3.11.3
+      5: 0.15.2
+      8:
+      - 3
+      - 5

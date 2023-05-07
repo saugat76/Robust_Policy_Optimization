@@ -119,28 +119,20 @@ class Agent(nn.Module):
     def __init__(self, envs, rpo_alpha, num_nodes, activation_func):
         super().__init__()
         self.rpo_alpha = rpo_alpha
-        # Changed by Saugat
         # Setting of the nodes used in actor and critic network nodes as a sys args variable
-        # Since the functions are not serializable so, using if else to select the respective activation function
-        if activation_func  == "nn.ReLU()":
-            activation = nn.ReLU()
-        elif activation_func  == "nn.Tanh()":
-            activation = nn.Tanh()
-        elif activation_func == "nn.Sigmoid()":
-            activation = nn.Sigmoid() 
-
+        # Changed by Saugat
         self.critic = nn.Sequential(
             layer_init(nn.Linear(np.array(envs.single_observation_space.shape).prod(), num_nodes)),
-            activation,
+            activation_func,
             layer_init(nn.Linear(num_nodes, num_nodes)),
-            activation,
+            activation_func,
             layer_init(nn.Linear(num_nodes, 1), std=1.0),
         )
         self.actor_mean = nn.Sequential(
             layer_init(nn.Linear(np.array(envs.single_observation_space.shape).prod(), num_nodes)),
-            activation,
+            activation_func,
             layer_init(nn.Linear(num_nodes, num_nodes)),
-            activation,
+            activation_func,
             layer_init(nn.Linear(num_nodes, np.prod(envs.single_action_space.shape)), std=0.01),
         )
         self.actor_logstd = nn.Parameter(torch.zeros(1, np.prod(envs.single_action_space.shape)))
@@ -182,8 +174,8 @@ sweep_configuration = {
     'batch_size': {'values': [16, 32, 64]},
     'lr': {'max': 0.1, 'min': 0.0001},
     'num_nodes': {'values': [64, 128, 256]},
-    'optimizer_choices': {'values': ["Adam", "RMSProp", "AdamW"]}, 
-    'activation_funcs': {'values': ["ReLU()", "nn.Tanh()", "nn.Sigmoid()"]}
+    'optimizer_choices': {'values': ['Adam', 'RMSProp', 'AdamW']}, 
+    'activation_funcs': {'values': ['ReLU()', 'nn.Tanh()', 'nn.Sigmoid()']}
     
     }
 }
@@ -198,7 +190,7 @@ def main():
     # May use wandb to do hyperparameter tunning and evaluate the model performance 
     run_name = f"{args.env_id}__{args.exp_name}__{args.seed}__{int(time.time())}"
     if args.track:
-        run = wandb.init(
+        wandb.init(
             project=args.wandb_project_name,
             entity=args.wandb_entity,
             sync_tensorboard=True,
@@ -210,7 +202,7 @@ def main():
         args.learning_rate = wandb.config.lr
         args.batch_size = wandb.config.batch_size
         args.num_nodes = wandb.config.num_nodes
-        optimizer_choice = wandb.config.optimizer_choices
+        optimizer_choice = wandb.config.optimizer
         args.activation_func = wandb.config.activation_funcs 
         
     writer = SummaryWriter(f"runs/{run_name}")
@@ -233,6 +225,13 @@ def main():
     
     # Added by Saugat 
     # Since the functions are not serializable so, using if else to select the respective activation function
+    if args.activation_func  == "nn.ReLU()":
+        activation_func = nn.ReLU()
+    elif args.activation_func  == "nn.Tanh()":
+        activation_func = nn.Tanh()
+    elif args.activation_func == "nn.Sigmoid()":
+        activation_func = nn.Sigmoid() 
+
     agent = Agent(envs, args.rpo_alpha, args.num_nodes, args.activation_func).to(device)
 
     # Added by Saugat 
@@ -303,7 +302,7 @@ def main():
 
                 # Addition of code to keep track of the convergence related paramters into weights and biases to sweep of hyperparamters
                 # Addition by Saugat 
-                if args.track:
+                if args.wandb_track:
                     wandb.log({"episodic_return": {info['episode']['r']}, 
                                "episodic_length": {info["episode"]["l"]}, 
                                "global_steps": global_step})
@@ -418,4 +417,4 @@ def main():
 # Sweep the code // main function usign the sweep configuration 
 # For the implemntation // running in CLI ->   wandb agent sweep_id
 # wandb.agent(sweep_id=sweep_id, function=main)
-wandb.agent(sweep_id, function=main, count=5)
+wandb.agent(sweep_id, function=main, count=10)

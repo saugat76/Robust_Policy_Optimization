@@ -303,7 +303,7 @@ def main():
 
                 # Addition of code to keep track of the convergence related paramters into weights and biases to sweep of hyperparamters
                 # Addition by Saugat 
-                if args.track:
+                if args.wandb_track:
                     wandb.log({"episodic_return": {info['episode']['r']}, 
                                "episodic_length": {info["episode"]["l"]}, 
                                "global_steps": global_step})

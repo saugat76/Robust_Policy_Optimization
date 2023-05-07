@@ -1,0 +1,12 @@
+wandb_version: 1
+
+activation_funcs:
+  value: ReLU()
+batch_size:
+  value: 16
+lr:
+  value: 0.0689613407644228
+num_nodes:
+  value: 256
+optimizer_choices:
+  value: AdamW

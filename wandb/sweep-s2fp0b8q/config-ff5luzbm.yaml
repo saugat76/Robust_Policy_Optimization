@@ -1,0 +1,12 @@
+wandb_version: 1
+
+activation_funcs:
+  value: nn.Tanh()
+batch_size:
+  value: 32
+lr:
+  value: 0.0024950379292789193
+num_nodes:
+  value: 256
+optimizer_choices:
+  value: Adam

@@ -1,0 +1,12 @@
+wandb_version: 1
+
+activation_funcs:
+  value: ReLU()
+batch_size:
+  value: 32
+lr:
+  value: 0.07351398617760667
+num_nodes:
+  value: 64
+optimizer_choices:
+  value: RMSProp
