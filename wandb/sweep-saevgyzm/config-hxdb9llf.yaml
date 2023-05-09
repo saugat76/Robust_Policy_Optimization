@@ -1,0 +1,10 @@
+wandb_version: 1
+
+activation_funcs:
+  value: Tanh
+lr:
+  value: 0.0001
+num_nodes:
+  value: 64
+optimizer_choices:
+  value: RMSProp

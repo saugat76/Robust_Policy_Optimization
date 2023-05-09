@@ -1,0 +1,97 @@
+global_step=200, episodic_return: -860.0294189453125
+global_step=400, episodic_return: -1369.700927734375
+global_step=600, episodic_return: -1117.44873046875
+global_step=800, episodic_return: -1365.495361328125
+global_step=1000, episodic_return: -868.6434936523438
+global_step=1200, episodic_return: -1166.4794921875
+global_step=1400, episodic_return: -1223.28955078125
+global_step=1600, episodic_return: -1183.207275390625
+global_step=1800, episodic_return: -1517.532470703125
+global_step=2000, episodic_return: -1269.590087890625
+SPS: 136
+global_step=2200, episodic_return: -1296.5126953125
+global_step=2400, episodic_return: -884.7608642578125
+global_step=2600, episodic_return: -1771.392822265625
+global_step=2800, episodic_return: -901.24853515625
+global_step=3000, episodic_return: -1296.6534423828125
+global_step=3200, episodic_return: -897.0393676757812
+global_step=3400, episodic_return: -1114.3992919921875
+global_step=3600, episodic_return: -1006.8847045898438
+global_step=3800, episodic_return: -1537.2470703125
+global_step=4000, episodic_return: -892.2144165039062
+SPS: 148
+global_step=4200, episodic_return: -873.4273071289062
+global_step=4400, episodic_return: -970.099365234375
+global_step=4600, episodic_return: -1273.4256591796875
+global_step=4800, episodic_return: -883.4644775390625
+global_step=5000, episodic_return: -1390.6402587890625
+global_step=5200, episodic_return: -1240.347900390625
+global_step=5400, episodic_return: -1428.7197265625
+global_step=5600, episodic_return: -1308.0582275390625
+global_step=5800, episodic_return: -1072.13134765625
+global_step=6000, episodic_return: -1588.7373046875
+SPS: 152
+global_step=6200, episodic_return: -1088.590087890625
+global_step=6400, episodic_return: -1261.3875732421875
+global_step=6600, episodic_return: -1374.169677734375
+global_step=6800, episodic_return: -1183.30419921875
+global_step=7000, episodic_return: -1249.14404296875
+global_step=7200, episodic_return: -1320.975341796875
+global_step=7400, episodic_return: -1428.3094482421875
+global_step=7600, episodic_return: -966.7974853515625
+global_step=7800, episodic_return: -971.5096435546875
+global_step=8000, episodic_return: -1200.84619140625
+SPS: 154
+global_step=8200, episodic_return: -1038.0780029296875
+global_step=8400, episodic_return: -1169.29296875
+global_step=8600, episodic_return: -1346.54345703125
+global_step=8800, episodic_return: -1469.8941650390625
+global_step=9000, episodic_return: -977.0306396484375
+global_step=9200, episodic_return: -1100.5198974609375
+global_step=9400, episodic_return: -954.2393188476562
+global_step=9600, episodic_return: -1164.295166015625
+global_step=9800, episodic_return: -1623.8992919921875
+global_step=10000, episodic_return: -1043.9154052734375
+global_step=10200, episodic_return: -1132.1884765625
+SPS: 155
+global_step=10400, episodic_return: -1489.2144775390625
+global_step=10600, episodic_return: -1291.9140625
+global_step=10800, episodic_return: -892.4321899414062
+global_step=11000, episodic_return: -1705.94482421875
+global_step=11200, episodic_return: -966.693359375
+global_step=11400, episodic_return: -1178.2042236328125
+global_step=11600, episodic_return: -1266.682373046875
+global_step=11800, episodic_return: -1072.990966796875
+global_step=12000, episodic_return: -964.5460815429688
+global_step=12200, episodic_return: -766.8938598632812
+SPS: 156
+global_step=12400, episodic_return: -1086.543212890625
+global_step=12600, episodic_return: -829.8363037109375
+global_step=12800, episodic_return: -1537.0560302734375
+global_step=13000, episodic_return: -1067.3763427734375
+global_step=13200, episodic_return: -972.0772094726562
+global_step=13400, episodic_return: -1590.5263671875
+global_step=13600, episodic_return: -1159.4669189453125
+global_step=13800, episodic_return: -1030.458984375
+global_step=14000, episodic_return: -1070.382568359375
+global_step=14200, episodic_return: -1522.8623046875
+SPS: 156
+global_step=14400, episodic_return: -1085.461669921875
+global_step=14600, episodic_return: -788.3280639648438
+global_step=14800, episodic_return: -1018.0681762695312
+global_step=15000, episodic_return: -1057.1600341796875
+global_step=15200, episodic_return: -1576.7752685546875
+global_step=15400, episodic_return: -975.3172607421875
+global_step=15600, episodic_return: -1386.6844482421875
+global_step=15800, episodic_return: -1181.3243408203125
+global_step=16000, episodic_return: -926.6532592773438
+global_step=16200, episodic_return: -920.694091796875
+Traceback (most recent call last):
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 447, in <module>
+    main()
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 364, in main
+    _, newlogprob, entropy, newvalue = agent.get_action_and_value(b_obs[mb_inds], b_actions[mb_inds])
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 159, in get_action_and_value
+    def get_action_and_value(self, x, action=None):
+KeyboardInterrupt

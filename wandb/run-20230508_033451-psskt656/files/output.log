@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 444, in <module>
+    main()
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 249, in main
+    agent = Agent(envs, args.rpo_alpha, num_nodes, activation_func).to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 137, in __init__
+    activation_fun_layer(),
+    ^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'activation_fun_layer' where it is not associated with a value

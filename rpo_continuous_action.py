@@ -28,7 +28,7 @@ def parse_args():
         help="if toggled, cuda will be enabled by default")
     parser.add_argument("--track", type=lambda x: bool(strtobool(x)), default=True, nargs="?", const=True,
         help="if toggled, this experiment will be tracked with Weights and Biases")
-    parser.add_argument("--wandb-project-name", type=str, default="cleanRL",
+    parser.add_argument("--wandb-project-name", type=str, default="ml__project__rpo",
         help="the wandb's project name")
     parser.add_argument("--wandb-entity", type=str, default=None,
         help="the entity (team) of wandb's project")
@@ -36,7 +36,7 @@ def parse_args():
         help="whether to capture videos of the agent performances (check out `videos` folder)")
 
     # Algorithm specific arguments
-    parser.add_argument("--env-id", type=str, default="Pendulum-v1",
+    parser.add_argument("--env-id", type=str, default="MountainCarContinuous-v0",
         help="the id of the environment")
     parser.add_argument("--total-timesteps", type=int, default=2000000,
         help="total timesteps of the experiments")
@@ -72,10 +72,15 @@ def parse_args():
         help="the target KL divergence threshold")
     parser.add_argument("--rpo-alpha", type=float, default=0.5,
         help="the alpha parameter for RPO")
-    parser.add_argument("--num-nodes", type=float, default=64,
+    parser.add_argument("--num-nodes", type=int, default=64,
         help="number of nodes used for actor and critic n/w")
-    parser.add_argument("--activation-func", type=str, default="nn.Tanh()",
-        help="activation function used in actor and critic n/w: 'nn.ReLu()', 'nn.Tanh()', 'nn.Sigmoid()'")
+    parser.add_argument("--activation-func", type=str, default="Tanh",
+        help="activation function used in actor and critic n/w: 'ReLu', 'Tanh', 'Sigmoid'")
+    parser.add_argument("--optimizer-choice", type=str, default="Adam",
+        help="optimizer function used for actor and critic n/w: 'Adam', 'AdamW', 'RMSProp'")
+    parser.add_argument("--num-layers", type=str, default=2,
+        help="number of layers for actor and critic network // only for hyperparamter record")
+    
     
     
     # Addition by Saugat
@@ -122,25 +127,26 @@ class Agent(nn.Module):
         # Changed by Saugat
         # Setting of the nodes used in actor and critic network nodes as a sys args variable
         # Since the functions are not serializable so, using if else to select the respective activation function
-        if activation_func  == "nn.ReLU()":
-            activation = nn.ReLU()
-        elif activation_func  == "nn.Tanh()":
-            activation = nn.Tanh()
-        elif activation_func == "nn.Sigmoid()":
-            activation = nn.Sigmoid() 
+        if activation_func  == "ReLU":
+            activation_fun_layer = nn.ReLU
+        elif activation_func  == "Tanh":
+            activation_fun_layer = nn.Tanh
+        elif activation_func == "Sigmoid":
+            activation_fun_layer = nn.Sigmoid 
+
 
         self.critic = nn.Sequential(
             layer_init(nn.Linear(np.array(envs.single_observation_space.shape).prod(), num_nodes)),
-            activation,
+            activation_fun_layer(),
             layer_init(nn.Linear(num_nodes, num_nodes)),
-            activation,
+            activation_fun_layer(),
             layer_init(nn.Linear(num_nodes, 1), std=1.0),
         )
         self.actor_mean = nn.Sequential(
             layer_init(nn.Linear(np.array(envs.single_observation_space.shape).prod(), num_nodes)),
-            activation,
+            activation_fun_layer(),
             layer_init(nn.Linear(num_nodes, num_nodes)),
-            activation,
+            activation_fun_layer(),
             layer_init(nn.Linear(num_nodes, np.prod(envs.single_action_space.shape)), std=0.01),
         )
         self.actor_logstd = nn.Parameter(torch.zeros(1, np.prod(envs.single_action_space.shape)))
@@ -161,7 +167,7 @@ class Agent(nn.Module):
             # New to RPO
             # Sample to add the stochasticity to the system 
             z = torch.FloatTensor(action_mean.shape).uniform_(-self.rpo_alpha, self.rpo_alpha)
-            action_mean = action_mean.cuda() + z.cuda()
+            action_mean = action_mean.to(device) + z.to(device)
             probs = Normal(action_mean, action_std)
         return action, probs.log_prob(action).sum(1), probs.entropy().sum(1), self.critic(x)
 
@@ -171,27 +177,27 @@ class Agent(nn.Module):
 # Addition by Saugat
 args = parse_args()
 
-sweep_configuration = {
-'method': 'random',
-'name': 'sweep',
-'metric': {
-    'goal': 'maximize', 
-    'name': 'episodic_return'
-    },
-'parameters': {
-    'batch_size': {'values': [16, 32, 64]},
-    'lr': {'max': 0.1, 'min': 0.0001},
-    'num_nodes': {'values': [64, 128, 256]},
-    'optimizer_choices': {'values': ["Adam", "RMSProp", "AdamW"]}, 
-    'activation_funcs': {'values': ["ReLU()", "nn.Tanh()", "nn.Sigmoid()"]}
-    
-    }
-}
+# sweep_configuration = {
+#     'method': 'bayes',
+#     'name': 'sweep',
+#     'metric': {
+#         'goal': 'maximize', 
+#         'name': 'episodic_return'
+#     },
 
-sweep_id = wandb.sweep(sweep=sweep_configuration, project=args.exp_name)
+#     'parameters': {
+#         'lr': {'values': [3e-4, 1e-1, 2.5e-2, 2.5e-3, 1e-4]},
+#         'num_nodes': {'values': [64, 128, 256]},
+#         'optimizer_choices': {'values': ["Adam", "RMSProp", "AdamW"]}, 
+#         'activation_funcs': {'values': ["ReLU", "Tanh", "Sigmoid"]}
+#     }
+# }
+
+# sweep_id = wandb.sweep(sweep=sweep_configuration, project=args.exp_name)
 # Based on these sweep parameters changing the codes 
 
-device = torch.device("cuda" if torch.cuda.is_available() and args.cuda else "cpu")
+device = torch.device("cuda:1" if torch.cuda.is_available() and args.cuda else "cpu")
+# device = "cpu"
 
 def main():
     # Keep track of all the runs and store all the log information in wandb and tensorboard logs
@@ -199,7 +205,7 @@ def main():
     run_name = f"{args.env_id}__{args.exp_name}__{args.seed}__{int(time.time())}"
     if args.track:
         run = wandb.init(
-            project=args.wandb_project_name,
+             project=args.wandb_project_name,
             entity=args.wandb_entity,
             sync_tensorboard=True,
             config=vars(args),
@@ -207,11 +213,21 @@ def main():
             save_code=True,
         )
         # Added by Saugat 
-        args.learning_rate = wandb.config.lr
-        args.batch_size = wandb.config.batch_size
-        args.num_nodes = wandb.config.num_nodes
-        optimizer_choice = wandb.config.optimizer_choices
-        args.activation_func = wandb.config.activation_funcs 
+        # learning_rate = float(wandb.config.lr)
+        # num_nodes = int(wandb.config.num_nodes)
+        # optimizer_choice = str(wandb.config.optimizer_choices)
+        # activation_func = str(wandb.config.activation_funcs)
+    # else:
+    #     learning_rate = args.learning_rate
+    #     num_nodes = args.num_nodes
+    #     optimizer_choice = "Adam"
+    #     activation_func = "Tanh"    
+
+    # Params  initilaized from sys arg without change in remaining code
+    learning_rate = args.learning_rate
+    num_nodes = args.num_nodes
+    optimizer_choice = args.optimizer_choice
+    activation_func = args.activation_func
         
     writer = SummaryWriter(f"runs/{run_name}")
     writer.add_text(
@@ -233,12 +249,12 @@ def main():
     
     # Added by Saugat 
     # Since the functions are not serializable so, using if else to select the respective activation function
-    agent = Agent(envs, args.rpo_alpha, args.num_nodes, args.activation_func).to(device)
+    agent = Agent(envs, args.rpo_alpha, num_nodes, activation_func).to(device)
 
     # Added by Saugat 
     # Change the optimizer function based on the sweep config // default use Adam optimizer
     if optimizer_choice == "Adam":
-        optimizer = optim.Adam(agent.parameters(), lr=args.learning_rate, eps=1e-5)
+        optimizer = optim.Adam(agent.parameters(), lr=learning_rate, eps=1e-5)
     elif optimizer_choice == "RMSProp":
         optimizer = optim.RMSprop(agent.parameters(), lr=args.learning_rate, eps=1e-5)
     elif optimizer_choice == "AdamW":    
@@ -268,7 +284,7 @@ def main():
         # Annealing the learning rate if instructed to do so
         if args.anneal_lr:
             frac = 1.0 - (update - 1.0) / num_updates
-            lrnow = frac * args.learning_rate
+            lrnow = frac * learning_rate
             optimizer.param_groups[0]["lr"] = lrnow
 
         for step in range(0, args.num_steps):
@@ -297,15 +313,19 @@ def main():
                 # Skip the envs that are not done
                 if info is None:
                     continue
-                print(f"global_step={global_step}, episodic_return={info['episode']['r']}")
-                writer.add_scalar("charts/episodic_return", info["episode"]["r"], global_step)
-                writer.add_scalar("charts/episodic_length", info["episode"]["l"], global_step)
+                # Added by Saugat 
+                # npArray is unhashable so, converting to float to do sweep
+                episodic_return = float(info['episode']['r'])
+                episodic_length = float(info["episode"]["l"])
+                print(f"global_step={global_step}, episodic_return: {episodic_return}")
+                writer.add_scalar("charts/episodic_return", episodic_return, global_step)
+                writer.add_scalar("charts/episodic_length", episodic_length, global_step)
 
                 # Addition of code to keep track of the convergence related paramters into weights and biases to sweep of hyperparamters
                 # Addition by Saugat 
                 if args.track:
-                    wandb.log({"episodic_return": {info['episode']['r']}, 
-                               "episodic_length": {info["episode"]["l"]}, 
+                    wandb.log({"episodic_return": episodic_return, 
+                               "episodic_length": episodic_length, 
                                "global_steps": global_step})
 
         # bootstrap value if not done
@@ -402,6 +422,10 @@ def main():
         writer.add_scalar("losses/explained_variance", explained_var, global_step)
         print("SPS:", int(global_step / (time.time() - start_time)))
         writer.add_scalar("charts/SPS", int(global_step / (time.time() - start_time)), global_step)
+        
+        # wandb code to track of entropy // added by Saugat
+        if args.track:
+            wandb.log({"entropy":float(entropy_loss), "global_step": global_step})
 
         if args.track and args.capture_video:
             for filename in os.listdir(f"videos/{run_name}"):
@@ -418,4 +442,6 @@ def main():
 # Sweep the code // main function usign the sweep configuration 
 # For the implemntation // running in CLI ->   wandb agent sweep_id
 # wandb.agent(sweep_id=sweep_id, function=main)
-wandb.agent(sweep_id, function=main, count=5)
+
+# Continuing without any sweep
+main()

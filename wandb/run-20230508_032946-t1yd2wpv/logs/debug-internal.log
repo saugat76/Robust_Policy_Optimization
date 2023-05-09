@@ -1,0 +1,205 @@
+2023-05-08 03:29:46,586 INFO    StreamThr :23672 [internal.py:wandb_internal():86] W&B internal server running at pid: 23672, started at: 2023-05-08 03:29:46.586033
+2023-05-08 03:29:46,586 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: status
+2023-05-08 03:29:46,586 INFO    WriterThread:23672 [datastore.py:open_for_write():85] open: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\run-t1yd2wpv.wandb
+2023-05-08 03:29:46,601 DEBUG   SenderThread:23672 [sender.py:send():375] send: header
+2023-05-08 03:29:46,742 DEBUG   SenderThread:23672 [sender.py:send():375] send: run
+2023-05-08 03:29:47,039 INFO    SenderThread:23672 [dir_watcher.py:__init__():219] watching files in: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files
+2023-05-08 03:29:47,039 INFO    SenderThread:23672 [sender.py:_start_run_threads():1124] run started: t1yd2wpv with start time 1683530986.5704
+2023-05-08 03:29:47,045 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: summary_record
+2023-05-08 03:29:47,047 INFO    SenderThread:23672 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-08 03:29:47,050 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: check_version
+2023-05-08 03:29:47,050 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: check_version
+2023-05-08 03:29:47,241 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: run_start
+2023-05-08 03:29:47,288 DEBUG   HandlerThread:23672 [system_info.py:__init__():31] System info init
+2023-05-08 03:29:47,288 DEBUG   HandlerThread:23672 [system_info.py:__init__():46] System info init done
+2023-05-08 03:29:47,288 INFO    HandlerThread:23672 [system_monitor.py:start():181] Starting system monitor
+2023-05-08 03:29:47,288 INFO    SystemMonitor:23672 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-08 03:29:47,288 INFO    HandlerThread:23672 [system_monitor.py:probe():201] Collecting system info
+2023-05-08 03:29:47,304 INFO    SystemMonitor:23672 [interfaces.py:start():190] Started cpu monitoring
+2023-05-08 03:29:47,304 INFO    SystemMonitor:23672 [interfaces.py:start():190] Started disk monitoring
+2023-05-08 03:29:47,304 INFO    SystemMonitor:23672 [interfaces.py:start():190] Started gpu monitoring
+2023-05-08 03:29:47,319 INFO    SystemMonitor:23672 [interfaces.py:start():190] Started memory monitoring
+2023-05-08 03:29:47,335 INFO    SystemMonitor:23672 [interfaces.py:start():190] Started network monitoring
+2023-05-08 03:29:47,366 DEBUG   HandlerThread:23672 [system_info.py:probe():195] Probing system
+2023-05-08 03:29:47,366 DEBUG   HandlerThread:23672 [system_info.py:_probe_git():180] Probing git
+2023-05-08 03:29:47,671 DEBUG   HandlerThread:23672 [system_info.py:_probe_git():188] Probing git done
+2023-05-08 03:29:47,672 DEBUG   HandlerThread:23672 [system_info.py:probe():240] Probing system done
+2023-05-08 03:29:47,672 DEBUG   HandlerThread:23672 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.11.3', 'heartbeatAt': '2023-05-08T07:29:47.366799', 'startedAt': '2023-05-08T07:29:46.523642', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:\\Users\\tripats\\Documents\\GitHub\\rpo_ppo_contrast\\rpo_continuous_action.py', 'codePath': 'rpo_continuous_action.py', 'git': {'remote': 'https://github.com/saugat76/rpo_ppo_contrast.git', 'commit': '7c80139217c1ff21ac6847c3eb551405f68c09ed'}, 'email': 'saugat.tripathi76@gmail.com', 'root': 'C:/Users/tripats/Documents/GitHub/rpo_ppo_contrast', 'host': 'CEC-ZHANGR43-LL', 'username': 'tripats', 'executable': 'C:\\Users\\tripats\\.conda\\envs\\rpo-project\\python.exe', 'cpu_count': 12, 'cpu_count_logical': 24, 'cpu_freq': {'current': 3504.0, 'min': 0.0, 'max': 3504.0}, 'cpu_freq_per_core': [{'current': 3504.0, 'min': 0.0, 'max': 3504.0}], 'disk': {'total': 930.9004402160645, 'used': 438.62309646606445}, 'gpu': 'Quadro RTX 6000', 'gpu_count': 2, 'gpu_devices': [{'name': 'Quadro RTX 6000', 'memory_total': 25769803776}, {'name': 'Quadro RTX 6000', 'memory_total': 25769803776}], 'memory': {'total': 63.68939208984375}}
+2023-05-08 03:29:47,672 INFO    HandlerThread:23672 [system_monitor.py:probe():211] Finished collecting system info
+2023-05-08 03:29:47,673 INFO    HandlerThread:23672 [system_monitor.py:probe():214] Publishing system info
+2023-05-08 03:29:47,673 DEBUG   HandlerThread:23672 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-05-08 03:29:47,675 DEBUG   HandlerThread:23672 [system_info.py:_save_pip():67] Saving pip packages done
+2023-05-08 03:29:47,676 DEBUG   HandlerThread:23672 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-05-08 03:29:47,682 ERROR   HandlerThread:23672 [system_info.py:_save_conda():85] Error saving conda packages: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\tripats\.conda\envs\rpo-project\Lib\site-packages\wandb\sdk\internal\system\system_info.py", line 81, in _save_conda
+    subprocess.call(
+  File "C:\Users\tripats\.conda\envs\rpo-project\Lib\subprocess.py", line 389, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tripats\.conda\envs\rpo-project\Lib\subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\tripats\.conda\envs\rpo-project\Lib\subprocess.py", line 1509, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2023-05-08 03:29:47,682 DEBUG   HandlerThread:23672 [system_info.py:_save_conda():86] Saving conda packages done
+2023-05-08 03:29:47,682 DEBUG   HandlerThread:23672 [system_info.py:_save_code():89] Saving code
+2023-05-08 03:29:47,790 DEBUG   HandlerThread:23672 [system_info.py:_save_code():110] Saving code done
+2023-05-08 03:29:47,790 DEBUG   HandlerThread:23672 [system_info.py:_save_patches():127] Saving git patches
+2023-05-08 03:29:48,044 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\code\rpo_continuous_action.py
+2023-05-08 03:29:48,045 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\requirements.txt
+2023-05-08 03:29:48,047 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\wandb-summary.json
+2023-05-08 03:29:48,047 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\conda-environment.yaml
+2023-05-08 03:29:48,048 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\code
+2023-05-08 03:29:48,806 DEBUG   HandlerThread:23672 [system_info.py:_save_patches():169] Saving git patches done
+2023-05-08 03:29:48,806 INFO    HandlerThread:23672 [system_monitor.py:probe():216] Finished publishing system info
+2023-05-08 03:29:48,829 DEBUG   SenderThread:23672 [sender.py:send():375] send: files
+2023-05-08 03:29:48,829 INFO    SenderThread:23672 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-05-08 03:29:48,830 INFO    SenderThread:23672 [sender.py:_save_file():1378] saving file code\rpo_continuous_action.py with policy now
+2023-05-08 03:29:48,831 INFO    SenderThread:23672 [sender.py:_save_file():1378] saving file diff.patch with policy now
+2023-05-08 03:29:48,841 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-08 03:29:48,842 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: stop_status
+2023-05-08 03:29:48,919 DEBUG   SenderThread:23672 [sender.py:send():375] send: telemetry
+2023-05-08 03:29:48,923 DEBUG   SenderThread:23672 [sender.py:send():375] send: exit
+2023-05-08 03:29:48,923 INFO    SenderThread:23672 [sender.py:send_exit():598] handling exit code: 1
+2023-05-08 03:29:48,923 INFO    SenderThread:23672 [sender.py:send_exit():600] handling runtime: 1
+2023-05-08 03:29:48,925 INFO    SenderThread:23672 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-08 03:29:48,925 INFO    SenderThread:23672 [sender.py:send_exit():606] send defer
+2023-05-08 03:29:48,926 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:48,926 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 0
+2023-05-08 03:29:48,927 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:48,927 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-05-08 03:29:48,927 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 1
+2023-05-08 03:29:48,928 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:48,928 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 1
+2023-05-08 03:29:48,928 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:48,928 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-05-08 03:29:48,929 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 2
+2023-05-08 03:29:48,929 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:48,929 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 2
+2023-05-08 03:29:48,929 INFO    HandlerThread:23672 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-08 03:29:48,930 DEBUG   SystemMonitor:23672 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-08 03:29:48,930 INFO    HandlerThread:23672 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-08 03:29:48,930 DEBUG   SystemMonitor:23672 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-08 03:29:48,943 INFO    HandlerThread:23672 [interfaces.py:finish():202] Joined disk monitor
+2023-05-08 03:29:48,946 DEBUG   SystemMonitor:23672 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-08 03:29:48,946 INFO    wandb-upload_1:23672 [upload_job.py:push():117] Skipped uploading C:\Users\tripats\AppData\Local\Temp\tmp6f8cj84pwandb\tcv7fx4k-code/rpo_continuous_action.py
+2023-05-08 03:29:49,055 INFO    HandlerThread:23672 [interfaces.py:finish():202] Joined gpu monitor
+2023-05-08 03:29:49,055 INFO    HandlerThread:23672 [interfaces.py:finish():202] Joined memory monitor
+2023-05-08 03:29:49,055 INFO    HandlerThread:23672 [interfaces.py:finish():202] Joined network monitor
+2023-05-08 03:29:49,055 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:49,055 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-05-08 03:29:49,055 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 3
+2023-05-08 03:29:49,055 DEBUG   SenderThread:23672 [sender.py:send():375] send: stats
+2023-05-08 03:29:49,055 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:49,055 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 3
+2023-05-08 03:29:49,055 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:49,055 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-05-08 03:29:49,055 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 4
+2023-05-08 03:29:49,055 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\wandb-summary.json
+2023-05-08 03:29:49,055 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:49,055 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\output.log
+2023-05-08 03:29:49,055 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 4
+2023-05-08 03:29:49,055 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\diff.patch
+2023-05-08 03:29:49,055 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:49,055 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\wandb-metadata.json
+2023-05-08 03:29:49,055 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-05-08 03:29:49,055 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 5
+2023-05-08 03:29:49,055 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:49,055 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 5
+2023-05-08 03:29:49,055 DEBUG   SenderThread:23672 [sender.py:send():375] send: summary
+2023-05-08 03:29:49,055 INFO    SenderThread:23672 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-08 03:29:49,055 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:49,055 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-05-08 03:29:49,055 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 6
+2023-05-08 03:29:49,055 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:49,055 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 6
+2023-05-08 03:29:49,070 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:49,070 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-05-08 03:29:49,077 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: status_report
+2023-05-08 03:29:49,196 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 7
+2023-05-08 03:29:49,197 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:49,197 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 7
+2023-05-08 03:29:49,198 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:49,198 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-05-08 03:29:49,223 INFO    wandb-upload_0:23672 [upload_job.py:push():137] Uploaded file C:\Users\tripats\AppData\Local\Temp\tmp6f8cj84pwandb\ekdce8g4-wandb-metadata.json
+2023-05-08 03:29:49,515 INFO    wandb-upload_2:23672 [upload_job.py:push():137] Uploaded file C:\Users\tripats\AppData\Local\Temp\tmp6f8cj84pwandb\rw0x1nr2-diff.patch
+2023-05-08 03:29:49,863 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-08 03:29:50,068 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\wandb-summary.json
+2023-05-08 03:29:50,069 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\config.yaml
+2023-05-08 03:29:50,926 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 8
+2023-05-08 03:29:50,926 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: poll_exit
+2023-05-08 03:29:50,926 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:50,927 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 8
+2023-05-08 03:29:50,928 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:50,928 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-05-08 03:29:50,991 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 9
+2023-05-08 03:29:50,992 DEBUG   SenderThread:23672 [sender.py:send():375] send: artifact
+2023-05-08 03:29:50,993 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:50,996 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 9
+2023-05-08 03:29:51,076 INFO    Thread-16 :23672 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\output.log
+2023-05-08 03:29:51,836 INFO    wandb-upload_0:23672 [upload_job.py:push():95] Uploaded file C:\Users\tripats\AppData\Local\wandb\wandb\artifacts\staging\tmpebhg5rv7
+2023-05-08 03:29:51,851 INFO    wandb-upload_2:23672 [upload_job.py:push():95] Uploaded file C:\Users\tripats\AppData\Local\wandb\wandb\artifacts\staging\tmpipium87s
+2023-05-08 03:29:52,135 INFO    wandb-upload_1:23672 [upload_job.py:push():95] Uploaded file C:\Users\tripats\AppData\Local\wandb\wandb\artifacts\staging\tmpht7pyvx6
+2023-05-08 03:29:52,900 INFO    SenderThread:23672 [sender.py:send_artifact():1474] sent artifact job-https___github.com_saugat76_rpo_ppo_contrast.git_rpo_continuous_action.py - {'id': 'QXJ0aWZhY3Q6NDQ2MjU0NjQw', 'digest': '04cdab35f4f26c4e1afc4f60a5e857ea', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjY3NDgxMzI3', 'latestArtifact': None}, 'version': 'latest'}
+2023-05-08 03:29:52,900 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:52,900 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-05-08 03:29:52,900 INFO    SenderThread:23672 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-05-08 03:29:53,094 INFO    SenderThread:23672 [dir_watcher.py:finish():395] scan: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files
+2023-05-08 03:29:53,094 INFO    SenderThread:23672 [dir_watcher.py:finish():409] scan save: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\conda-environment.yaml conda-environment.yaml
+2023-05-08 03:29:53,095 INFO    SenderThread:23672 [dir_watcher.py:finish():409] scan save: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\config.yaml config.yaml
+2023-05-08 03:29:53,096 INFO    SenderThread:23672 [dir_watcher.py:finish():409] scan save: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\diff.patch diff.patch
+2023-05-08 03:29:53,096 INFO    SenderThread:23672 [dir_watcher.py:finish():409] scan save: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\output.log output.log
+2023-05-08 03:29:53,101 INFO    SenderThread:23672 [dir_watcher.py:finish():409] scan save: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\requirements.txt requirements.txt
+2023-05-08 03:29:53,107 INFO    SenderThread:23672 [dir_watcher.py:finish():409] scan save: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\wandb-metadata.json wandb-metadata.json
+2023-05-08 03:29:53,108 INFO    SenderThread:23672 [dir_watcher.py:finish():409] scan save: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\wandb-summary.json wandb-summary.json
+2023-05-08 03:29:53,115 INFO    SenderThread:23672 [dir_watcher.py:finish():409] scan save: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\code\rpo_continuous_action.py code\rpo_continuous_action.py
+2023-05-08 03:29:53,116 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 10
+2023-05-08 03:29:53,121 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:53,121 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 10
+2023-05-08 03:29:53,122 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:53,122 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-05-08 03:29:53,123 INFO    SenderThread:23672 [file_pusher.py:finish():167] shutting down file pusher
+2023-05-08 03:29:53,410 INFO    wandb-upload_0:23672 [upload_job.py:push():137] Uploaded file C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\config.yaml
+2023-05-08 03:29:53,415 INFO    wandb-upload_1:23672 [upload_job.py:push():137] Uploaded file C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\output.log
+2023-05-08 03:29:53,484 INFO    wandb-upload_3:23672 [upload_job.py:push():137] Uploaded file C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\wandb-summary.json
+2023-05-08 03:29:53,490 INFO    wandb-upload_2:23672 [upload_job.py:push():137] Uploaded file C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\files\requirements.txt
+2023-05-08 03:29:53,691 INFO    Thread-15 (_thread_body):23672 [sender.py:transition_state():626] send defer: 11
+2023-05-08 03:29:53,692 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:53,692 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 11
+2023-05-08 03:29:53,693 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:53,693 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-05-08 03:29:53,693 INFO    SenderThread:23672 [file_pusher.py:join():172] waiting for file pusher
+2023-05-08 03:29:53,693 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 12
+2023-05-08 03:29:53,694 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:53,694 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 12
+2023-05-08 03:29:53,695 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:53,695 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-05-08 03:29:53,777 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 13
+2023-05-08 03:29:53,777 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:53,777 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 13
+2023-05-08 03:29:53,778 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:53,778 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-05-08 03:29:53,778 INFO    SenderThread:23672 [sender.py:transition_state():626] send defer: 14
+2023-05-08 03:29:53,780 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: defer
+2023-05-08 03:29:53,780 DEBUG   SenderThread:23672 [sender.py:send():375] send: final
+2023-05-08 03:29:53,780 INFO    HandlerThread:23672 [handler.py:handle_request_defer():170] handle defer: 14
+2023-05-08 03:29:53,780 DEBUG   SenderThread:23672 [sender.py:send():375] send: footer
+2023-05-08 03:29:53,781 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: defer
+2023-05-08 03:29:53,781 INFO    SenderThread:23672 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-05-08 03:29:53,783 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-08 03:29:53,783 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: server_info
+2023-05-08 03:29:53,784 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: get_summary
+2023-05-08 03:29:53,784 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: poll_exit
+2023-05-08 03:29:53,785 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: sampled_history
+2023-05-08 03:29:53,785 DEBUG   SenderThread:23672 [sender.py:send_request():402] send_request: server_info
+2023-05-08 03:29:53,824 INFO    MainThread:23672 [wandb_run.py:_footer_history_summary_info():3469] rendering history
+2023-05-08 03:29:53,824 INFO    MainThread:23672 [wandb_run.py:_footer_history_summary_info():3501] rendering summary
+2023-05-08 03:29:53,824 INFO    MainThread:23672 [wandb_run.py:_footer_sync_info():3428] logging synced files
+2023-05-08 03:29:53,831 DEBUG   HandlerThread:23672 [handler.py:handle_request():144] handle_request: shutdown
+2023-05-08 03:29:53,831 INFO    HandlerThread:23672 [handler.py:finish():845] shutting down handler
+2023-05-08 03:29:54,788 INFO    WriterThread:23672 [datastore.py:close():298] close: C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_032946-t1yd2wpv\run-t1yd2wpv.wandb
+2023-05-08 03:29:54,835 INFO    SenderThread:23672 [sender.py:finish():1550] shutting down sender
+2023-05-08 03:29:54,835 INFO    SenderThread:23672 [file_pusher.py:finish():167] shutting down file pusher
+2023-05-08 03:29:54,835 INFO    SenderThread:23672 [file_pusher.py:join():172] waiting for file pusher

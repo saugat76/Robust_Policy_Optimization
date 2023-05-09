@@ -1,0 +1,23 @@
+global_step=200, episodic_return: -780.8609008789062
+global_step=400, episodic_return: -1371.875
+global_step=600, episodic_return: -1122.989501953125
+global_step=800, episodic_return: -1369.29736328125
+global_step=1000, episodic_return: -870.876953125
+global_step=1200, episodic_return: -1169.1453857421875
+global_step=1400, episodic_return: -1228.190185546875
+global_step=1600, episodic_return: -1186.126708984375
+global_step=1800, episodic_return: -1518.9534912109375
+global_step=2000, episodic_return: -1272.1409912109375
+Traceback (most recent call last):
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 451, in <module>
+    main()
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 368, in main
+    _, newlogprob, entropy, newvalue = agent.get_action_and_value(b_obs[mb_inds], b_actions[mb_inds])
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 176, in get_action_and_value
+    return action, probs.log_prob(action).sum(1), probs.entropy().sum(1), self.critic(x)
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tripats\.conda\envs\rpo-project\Lib\site-packages\torch\distributions\normal.py", line 83, in log_prob
+    return -((value - self.loc) ** 2) / (2 * var) - log_scale - math.log(math.sqrt(2 * math.pi))
+              ~~~~~~^~~~~~~~~~
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:1 and cuda:0!

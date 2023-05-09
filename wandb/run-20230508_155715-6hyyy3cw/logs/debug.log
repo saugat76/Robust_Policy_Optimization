@@ -1,0 +1,34 @@
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_setup.py:_flush():76] Current SDK version is 0.15.2
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_setup.py:_flush():76] Configure stats pid to 1528
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_setup.py:_flush():76] Loading settings from C:\Users\tripats\.config\wandb\settings
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_setup.py:_flush():76] Loading settings from C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\settings
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'rpo_continuous_action.py', 'program': 'C:\\Users\\tripats\\Documents\\GitHub\\rpo_ppo_contrast\\rpo_continuous_action.py'}
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_init.py:_log_setup():507] Logging user logs to C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_155715-6hyyy3cw\logs\debug.log
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_init.py:_log_setup():508] Logging internal logs to C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\wandb\run-20230508_155715-6hyyy3cw\logs\debug-internal.log
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_init.py:init():547] calling init triggers
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'exp_name': 'rpo_continuous_action', 'seed': 1, 'torch_deterministic': True, 'cuda': True, 'track': True, 'wandb_project_name': 'ml__project__rpo', 'wandb_entity': None, 'capture_video': False, 'env_id': 'MountainCarContinuous-v0', 'total_timesteps': 2000000, 'learning_rate': 0.0003, 'num_envs': 1, 'num_steps': 2048, 'anneal_lr': True, 'gamma': 0.99, 'gae_lambda': 0.95, 'num_minibatches': 32, 'update_epochs': 10, 'norm_adv': True, 'clip_coef': 0.2, 'clip_vloss': True, 'ent_coef': 0.0, 'vf_coef': 0.5, 'max_grad_norm': 0.5, 'target_kl': None, 'rpo_alpha': 0.5, 'num_nodes': 64, 'activation_func': 'Sigmoid', 'optimizer_choice': 'Adam', 'num_layers': 2, 'sweep_config': False, 'batch_size': 2048, 'minibatch_size': 64}
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_init.py:init():596] starting backend
+2023-05-08 15:57:15,991 INFO    MainThread:1528 [wandb_init.py:init():600] setting up manager
+2023-05-08 15:57:16,016 INFO    MainThread:1528 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-05-08 15:57:16,022 INFO    MainThread:1528 [wandb_init.py:init():606] backend started and connected
+2023-05-08 15:57:16,038 INFO    MainThread:1528 [wandb_init.py:init():700] updated telemetry
+2023-05-08 15:57:16,116 INFO    MainThread:1528 [wandb_init.py:init():737] communicating run to backend with 60.0 second timeout
+2023-05-08 15:57:16,370 INFO    MainThread:1528 [wandb_run.py:_on_init():2177] communicating current version
+2023-05-08 15:57:16,512 INFO    MainThread:1528 [wandb_run.py:_on_init():2186] got version response 
+2023-05-08 15:57:16,513 INFO    MainThread:1528 [wandb_init.py:init():787] starting run threads in backend
+2023-05-08 15:57:17,610 INFO    MainThread:1528 [wandb_run.py:_console_start():2158] atexit reg
+2023-05-08 15:57:17,610 INFO    MainThread:1528 [wandb_run.py:_redirect():2013] redirect: 3
+2023-05-08 15:57:17,610 INFO    MainThread:1528 [wandb_run.py:_redirect():2078] Wrapping output streams.
+2023-05-08 15:57:17,611 INFO    MainThread:1528 [wandb_run.py:_redirect():2103] Redirects installed.
+2023-05-08 15:57:17,611 INFO    MainThread:1528 [wandb_init.py:init():829] run started, returning control to user process
+2023-05-08 15:57:17,612 INFO    MainThread:1528 [wandb_run.py:_tensorboard_callback():1433] tensorboard callback: runs/MountainCarContinuous-v0__rpo_continuous_action__1__1683575834, True
+2023-05-08 23:24:15,155 INFO    MainThread:1528 [wandb_run.py:_finish():1893] finishing run saugat76/ml__project__rpo/6hyyy3cw
+2023-05-08 23:24:15,155 INFO    MainThread:1528 [wandb_run.py:_atexit_cleanup():2127] got exitcode: 0
+2023-05-08 23:24:15,155 INFO    MainThread:1528 [wandb_run.py:_restore():2110] restore
+2023-05-08 23:24:15,155 INFO    MainThread:1528 [wandb_run.py:_restore():2116] restore done
+2023-05-08 23:24:25,873 INFO    MainThread:1528 [wandb_run.py:_footer_history_summary_info():3469] rendering history
+2023-05-08 23:24:25,873 INFO    MainThread:1528 [wandb_run.py:_footer_history_summary_info():3501] rendering summary
+2023-05-08 23:24:25,873 INFO    MainThread:1528 [wandb_run.py:_footer_sync_info():3428] logging synced files

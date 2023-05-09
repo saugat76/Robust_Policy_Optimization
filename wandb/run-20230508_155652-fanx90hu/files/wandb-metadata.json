@@ -1,0 +1,57 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.3",
+    "heartbeatAt": "2023-05-08T19:56:53.364989",
+    "startedAt": "2023-05-08T19:56:52.585351",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--activation-func",
+        "ReLU"
+    ],
+    "state": "running",
+    "program": "C:\\Users\\tripats\\Documents\\GitHub\\rpo_ppo_contrast\\rpo_continuous_action.py",
+    "codePath": "rpo_continuous_action.py",
+    "git": {
+        "remote": "https://github.com/saugat76/rpo_ppo_contrast.git",
+        "commit": "7c80139217c1ff21ac6847c3eb551405f68c09ed"
+    },
+    "email": "saugat.tripathi76@gmail.com",
+    "root": "C:/Users/tripats/Documents/GitHub/rpo_ppo_contrast",
+    "host": "CEC-ZHANGR43-LL",
+    "username": "tripats",
+    "executable": "C:\\Users\\tripats\\.conda\\envs\\rpo-project\\python.exe",
+    "cpu_count": 12,
+    "cpu_count_logical": 24,
+    "cpu_freq": {
+        "current": 3504.0,
+        "min": 0.0,
+        "max": 3504.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3504.0,
+            "min": 0.0,
+            "max": 3504.0
+        }
+    ],
+    "disk": {
+        "total": 930.9004402160645,
+        "used": 442.8333625793457
+    },
+    "gpu": "Quadro RTX 6000",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "Quadro RTX 6000",
+            "memory_total": 25769803776
+        },
+        {
+            "name": "Quadro RTX 6000",
+            "memory_total": 25769803776
+        }
+    ],
+    "memory": {
+        "total": 63.68939208984375
+    }
+}

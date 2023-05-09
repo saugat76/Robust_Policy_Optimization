@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 451, in <module>
+    main()
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 256, in main
+    agent = Agent(envs, args.rpo_alpha, num_nodes, activation_func).to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 139, in __init__
+    layer_init(nn.Linear(np.array(envs.single_observation_space.shape).prod(), num_nodes)),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tripats\.conda\envs\rpo-project\Lib\site-packages\torch\nn\modules\linear.py", line 96, in __init__
+    self.weight = Parameter(torch.empty((out_features, in_features), **factory_kwargs))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: empty() received an invalid combination of arguments - got (tuple, dtype=NoneType, device=NoneType), but expected one of:
+ * (tuple of ints size, *, tuple of names names, torch.memory_format memory_format, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)
+ * (tuple of ints size, *, torch.memory_format memory_format, Tensor out, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)

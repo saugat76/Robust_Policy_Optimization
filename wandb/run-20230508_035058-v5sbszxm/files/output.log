@@ -1,0 +1,20 @@
+global_step=200, episodic_return: -780.8609008789062
+global_step=400, episodic_return: -1371.875
+global_step=600, episodic_return: -1122.989501953125
+global_step=800, episodic_return: -1369.29736328125
+global_step=1000, episodic_return: -870.876953125
+global_step=1200, episodic_return: -1169.1453857421875
+global_step=1400, episodic_return: -1228.190185546875
+global_step=1600, episodic_return: -1186.126708984375
+global_step=1800, episodic_return: -1518.9534912109375
+global_step=2000, episodic_return: -1272.1409912109375
+Traceback (most recent call last):
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 451, in <module>
+    main()
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 368, in main
+    _, newlogprob, entropy, newvalue = agent.get_action_and_value(b_obs[mb_inds], b_actions[mb_inds])
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 174, in get_action_and_value
+    action_mean = action_mean.todevice(device) + z.todevice(device)
+                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tensor' object has no attribute 'todevice'

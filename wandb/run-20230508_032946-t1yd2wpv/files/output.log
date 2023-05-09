@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 442, in <module>
+    main()
+  File "C:\Users\tripats\Documents\GitHub\rpo_ppo_contrast\rpo_continuous_action.py", line 224, in main
+    optimizer_choice = args.optimizer_choice
+                       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'optimizer_choice'

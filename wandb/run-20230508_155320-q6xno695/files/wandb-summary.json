@@ -1,0 +1,1 @@
+{"episodic_return": 93.50000762939453, "episodic_length": 65.0, "global_steps": 1998817, "_timestamp": 1683587015.8569548, "_runtime": 11415.726299762726, "_step": 30242, "entropy": 1.8443877696990967, "global_step": 1998848, "_wandb": {"runtime": 11415}}
